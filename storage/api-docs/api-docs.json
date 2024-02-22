@@ -1,0 +1,59 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentation My API",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/barang": {
+            "get": {
+                "tags": [
+                    "Barang"
+                ],
+                "summary": "Get List barang Data",
+                "description": "get data barang",
+                "operationId": "barang",
+                "responses": {
+                    "default": {
+                        "description": "return array model barang"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Barang"
+                ],
+                "summary": "Store Barang",
+                "description": "-",
+                "operationId": "barang/store",
+                "requestBody": {
+                    "description": "form barang",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nama"
+                                ],
+                                "properties": {
+                                    "nama": {
+                                        "type": "string"
+                                    },
+                                    "deskripsi": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    }
+}

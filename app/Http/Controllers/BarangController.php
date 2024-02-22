@@ -8,7 +8,17 @@ use Illuminate\Http\Request;
 class BarangController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * @OA\Get(
+     *     path="/api/barang",
+     *     tags={"Barang"},
+     *     summary="Get List barang Data",
+     *     description="get data barang",
+     *     operationId="barang",
+     *     @OA\Response(
+     *         response="default",
+     *         description="return array model barang"
+     *     )
+     * )
      */
     public function index()
     {
@@ -27,7 +37,26 @@ class BarangController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * @OA\Post(
+     *     path="/api/barang",
+     *     tags={"Barang"},
+     *     summary="Store Barang",
+     *     description="-",
+     *     operationId="barang/store",
+     *     @OA\RequestBody(
+     *          required=true,
+     *          description="form barang",
+     *          @OA\JsonContent(
+     *              required={"nama"},
+     *              @OA\Property(property="nama", type="string"),
+     *              @OA\Property(property="deskripsi", type="string"),
+     *          ),
+     *      ),
+     *     @OA\Response(
+     *         response="default",
+     *         description=""
+     *     )
+     * )
      */
     public function store(Request $request)
     {

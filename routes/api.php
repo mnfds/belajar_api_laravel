@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('barang',BarangController::class);
+Route::apiResource('barang',BarangController::class)->except(['create','edit']);
